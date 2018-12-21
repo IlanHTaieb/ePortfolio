@@ -1,0 +1,64 @@
+.skills {
+    width: 100%;
+    padding: 150px 0;
+    background: url('../images/skill.jpg') no-repeat fixed;
+    background-size: cover;
+    
+    .skillsContainer {
+        padding: 50px 0;
+        padding-bottom: 20px;
+        h2{
+            font-size: 48px;
+            margin: 75px auto;
+        }
+        display: flex;
+        flex-wrap: wrap;
+        @include m-center (95%);
+        background: $background;
+        margin-top: 0 50px;
+
+        @include m-center (95%);
+
+        @media all and (max-width: 750px) {
+            justify-content: center;
+        }
+        @media all and (max-width: 550px) {
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
+
+        .skillsElt {
+            width: 23%;
+            padding: 5px;
+            position: relative;
+            height: 250px;
+            border: 2px dotted black;
+
+            @media all and (max-width: 1000px) {
+                width: 33%;
+            }
+            @media all and (max-width: 750px) {
+                width: 45%;
+            }
+            @media all and (max-width: 550px) {
+                @include m-center (80%);
+            }
+
+            h3 {
+                font-size: 25px;
+            }
+            >div {
+                position: absolute;
+                width: 90%;
+                top: 50%;
+                margin-top: -20px;
+                display: flex;
+                justify-content: space-around;
+    
+                .dependencies, .logoElt {
+                    width: 40%;
+                }
+            }
+        }
+    }
+}

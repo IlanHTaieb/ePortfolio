@@ -1,0 +1,59 @@
+.home {
+    min-height: 800px;
+    background: url('../images/wallpaper.jpg') fixed;
+    background-size: cover;
+    @include f-center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -3;
+
+    @media all and (max-width: 750px) {
+        min-height: 300px;
+        height: 300px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 60px;
+        position: fixed;
+        left: 50%;
+        display: inline-block;
+        width: 900px;
+        animation: sliding 2.5s, opacitie 7s;
+        animation-fill-mode: forwards;
+        user-select: none;
+        color: white;
+        
+        @media all and (max-width: 850px) {
+            font-size: 40px;
+            left: 15px;
+            top: 0;
+            animation: inherit;
+            text-align: left;
+        }
+        @media all and (max-width: 500px) {
+            font-size: 30px;
+        }
+        @media all and (max-width: 400px) {
+            font-size: 20px;
+        }
+
+    }
+
+    @keyframes sliding {
+        from {
+            left: 50%;
+        } to {
+            left: $posCenter;
+            margin-left: -400px;
+        }
+    }
+    @keyframes opacitie {
+        from {
+            opacity: 0;
+        } to {
+            opacity: 1;
+        }
+    }
+}

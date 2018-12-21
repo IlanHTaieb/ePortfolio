@@ -1,0 +1,200 @@
+.section {
+    height: 800px;
+    @include f-center;
+    background: linear-gradient(to right, rgb(50, 150, 250), white, rgb(50, 150, 250));
+    z-index: 999;
+
+    @media all and (max-width: 750px) {
+        display: block;
+    }
+    h2 {
+        font-size: 35px;
+    }
+    
+    .sectionContainer {
+        @include m-center (80%);
+        display: flex;
+        flex-direction: column;
+
+        @media all and (max-width: 750px) {
+            margin-top: 200px;
+        }
+    }
+    .sectionElt {
+        width: 40%;
+
+        @media all and (max-width: 1000px) {
+            width: 80%;
+        }
+    }
+    .right {
+        align-self: flex-end;
+
+        @media all and (max-width: 750px) {
+            align-self: inherit;
+        }
+    }
+    .sectionText {
+        width: 100%;
+        padding: 50px;
+        font-size: 25px;
+    }
+}
+
+.parcours {
+    background: $background;
+    display: flex;
+    position: relative;
+
+    .imageParcours {
+        background: url('../images/cyberspy.jpg') fixed no-repeat;
+        background-position: left 10% center;
+        background-size: 35%;
+        width: 50%;
+        height: 460px;
+        position: absolute;
+        left: 10px;
+        z-index: 99;
+        
+        @media all and (max-width: 1000px) {
+            position: inherit;
+            order: 1;
+            width: 100%;
+            left: 0;
+            background-size: cover;
+        }
+        
+    }
+    .overlayImg {
+        position: absolute;
+        left: 15%;
+        width: 60%;
+        height: 400px;
+        border: 30px solid $background;
+        transform: skew(30deg);
+
+        @media all and (max-width: 1000px) {
+            display: none;
+        }
+    }
+
+
+    @media all and (max-width: 1000px) {
+        padding-bottom: 200px;
+        flex-direction: column;
+    }
+    @media all and (max-width: 750px) {
+        background-size: contain;
+    }
+
+    .parcoursContainer {
+        @include m-center (95%);
+        position: relative;
+
+        .parcoursElt {
+            padding: 30px;
+            word-wrap: break-word;
+            margin-top: -100px;
+            
+            @media all and (min-width: 1000px) {
+                right: 150%;
+            }
+            @media all and (max-width: 750px) {
+                margin-top: 100px;
+                background-size: contain;
+            }
+            
+            h2 {
+                margin-top: inherit;
+            }
+            p {
+                font-size: 20px;
+                width: 80%;
+            }
+        }
+        .parcoursLeft {
+            @media all and (min-width: 1000px) {
+                animation: slideLeft 2s;
+                animation-fill-mode: forwards;
+                display: inline-block;
+                width: 40%;
+                position: absolute;
+                top: 50%;
+            }
+        }
+    }
+}
+
+.presentation {
+    background: $background;
+    display: flex;
+    position: relative;
+
+    @media all and (max-width: 1000px) {
+        flex-direction: column;
+        padding-bottom: 600px;
+    }
+
+    .imagePresentation {
+        background: url('../images/myAvatar.png') fixed no-repeat;
+        background-position: right 10% center;
+        background-size: 35%;
+        width: 50%;
+        height: 460px;
+        position: absolute;
+        right: 0;
+        
+        @media all and (max-width: 1000px) {
+            top: 900px;
+            order: 1;
+        }
+    }
+    .overlayImg {
+        position: absolute;
+        right: 15%;
+        width: 60%;
+        height: 400px;
+        border: 30px solid $background;
+        transform: skew(30deg);
+
+        @media all and (max-width: 850px) {
+            display: none;
+        }
+    }
+
+    .presentationContainer {
+        .presentationElt {
+            @media all and (min-width: 1000px) {
+                margin-left: 150%;
+                margin-top: -200px;
+                order: 2;
+            }
+        }
+        .presentationRight {
+            @media all and (min-width: 1000px) {
+                animation: slideRight 2s;
+                animation-fill-mode: forwards;
+                display: inline-block;
+                width: 45%;
+            }
+        }
+    }
+}
+
+@keyframes slideRight {
+    from {
+        margin-left: 150%
+    } to {
+        margin-left: 0;
+    }
+    
+}
+
+@keyframes slideLeft {
+    from {
+        right: 150%
+    } to {
+        right: 0;
+    }
+    
+}
